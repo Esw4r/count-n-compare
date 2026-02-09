@@ -1,0 +1,101 @@
+.game-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    min-height: calc(100vh - 100px);
+}
+
+.game-instruction {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #555;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.instruction-icon {
+    font-size: 1.5rem;
+}
+
+.game-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.next-round-btn {
+    background: linear-gradient(135deg, #a8e6cf 0%, #88d8b0 100%);
+    color: #2d5a45;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(136, 216, 176, 0.4);
+    margin-top: 1rem;
+}
+
+.next-round-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(136, 216, 176, 0.5);
+}
+
+.next-round-btn:active {
+    transform: translateY(0);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 50;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .game-area {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-board {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .game-instruction {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+        text-align: center;
+    }
+
+    .game-area {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
